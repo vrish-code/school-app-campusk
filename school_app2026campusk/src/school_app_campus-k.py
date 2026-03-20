@@ -728,6 +728,7 @@ def att():
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         b, a = plt.subplots()
+        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         a.bar(
             [months[3], months[5], months[8], months[10]],
             [attendance[3], attendance[5], attendance[8], attendance[10]],
@@ -737,7 +738,7 @@ def att():
         a.set_xlabel("Months")
         a.set_ylabel("Attendance out of 30 days")
         a.set_ylim(0, 30)
-        a.grid(True, alpha=0.06, linestyle="--")
+        
         st.pyplot(b)
         plt.close(b)
     with c2:
@@ -763,25 +764,26 @@ def att():
             ],
             color="skyblue",
         )
+        d.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         d.set_title(f"Attendance of {Data["Name"]}—months with 31 days")
         d.set_xlabel("Months")
         d.set_ylabel("Attendance out of 31 days")
         d.set_ylim(0, 31)
-        d.grid(True, alpha=0.06, linestyle="--")
         st.pyplot(c)
         plt.close(c)
     with c3:
         e, f = plt.subplots()
+        f.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         f.bar([months[1]], [attendance[1]], color="skyblue")
         f.set_title(f"Attendance of {Data["Name"]}—month with 28 days (February)")
         f.set_xlabel("Month")
         f.set_ylabel("Attendance out of 28 days")
         f.set_ylim(0, 31)
-        f.grid(True, alpha=0.06, linestyle="--")
         st.pyplot(e)
         plt.close(e)
     with c4:
         g, h = plt.subplots()
+        h.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         h.bar(["Total attendance"], [sum(attendance) / sum(dm) * 100], color="skyblue")
         h.set_title(f"Attendance of {Data["Name"]}—total")
         h.set_xlabel("Total attendance percentage")
@@ -837,36 +839,38 @@ def markss():
         st.subheader("UT1 performance")
         st.dataframe(utdf)
         f, a = plt.subplots()
+        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         a.bar(subjects, mut, color="skyblue")
         a.set_title("UT1 performance")
         a.set_xlabel("Subjects")
         a.set_ylabel("Marks")
         a.set_ylim(0, 50)
-        a.grid(True, alpha=0.06, linestyle="--")
+       
         st.pyplot(f)
         plt.close(f)
     with t2:
         st.subheader("UT2 performance")
         st.dataframe(ut2df)
         f, a = plt.subplots()
+        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         a.bar(subjects, mut, color="skyblue")
         a.set_title("UT2 performance")
         a.set_xlabel("Subjects")
         a.set_ylabel("Marks")
         a.set_ylim(0, 50)
-        a.grid(True, alpha=0.06, linestyle="--")
+        
         st.pyplot(f)
         plt.close(f)
     with t3:
         st.subheader("T1 performance")
         st.dataframe(tdf)
         f, a = plt.subplots()
+        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
         a.bar(subjects, mt, color="skyblue")
         a.set_title("T1 performance")
         a.set_xlabel("Subjects")
         a.set_ylabel("Marks")
         a.set_ylim(0, 100)
-        a.grid(True, alpha=0.06, linestyle="--")
         st.pyplot(f)
         plt.close(f)
     with t4:
@@ -875,22 +879,22 @@ def markss():
         c1, c2 = st.columns(2)
         with c1:
             f, a = plt.subplots()
+            a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
             a.bar(["UT1", "UT2"], [283, 283], color="skyblue")
             a.set_title("Overall performance")
             a.set_xlabel("Exams")
             a.set_ylabel("Marks")
             a.set_ylim(0, 300)
-            a.grid(True, alpha=0.06, linestyle="--")
             st.pyplot(f)
             plt.close(f)
         with c2:
             f, a = plt.subplots()
+            a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
             a.bar(["T1"], [580], color="skyblue")
             a.set_title("Overall performance")
             a.set_xlabel("Exam")
             a.set_ylabel("Marks")
             a.set_ylim(0, 600)
-            a.grid(True, alpha=0.06, linestyle="--")
             st.pyplot(f)
             plt.close(f)
 
