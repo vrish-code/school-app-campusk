@@ -5,29 +5,29 @@ import random
 import os
 import string as s
 
-wsimgpath = r"school_app2026campusk\src\Ws.png"
+wsimgpath = r"src/Ws.png"
 st.set_page_config(layout="wide")
 st.set_page_config(initial_sidebar_state="expanded")
-fpj = r"school_app2026campusk\src\1.png"
-fpf = r"school_app2026campusk\src\2.png"
-fpm = r"school_app2026campusk\src\3.png"
-fpa = r"school_app2026campusk\src\4.png"
-fpma = r"school_app2026campusk\src\5.png"
-fpju = r"school_app2026campusk\src\6.png"
-fpjul = r"school_app2026campusk\src\7.png"
-fpau = r"school_app2026campusk\src\8.png"
-fpsep = r"school_app2026campusk\src\9.png"
-fpo = r"school_app2026campusk\src\10.png"
-fpn = r"school_app2026campusk\src\11.png"
-fpd = r"school_app2026campusk\src\12.png"
+fpj = r"src/1.png"
+fpf = r"src/2.png"
+fpm = r"src/3.png"
+fpa = r"src/4.png"
+fpma = r"src/5.png"
+fpju = r"src/6.png"
+fpjul = r"src/7.png"
+fpau = r"src/8.png"
+fpsep = r"src/9.png"
+fpo = r"src/10.png"
+fpn = r"src/11.png"
+fpd = r"src/12.png"
 
 WS1 = {
-    "Path": r"school_app2026campusk\src\Worksheet_1.pdf",
+    "Path": r"src/Worksheet_1.pdf",
     "Subject": "Math and Science",
     "Date issued": f"{random.randint(1,30)}/{random.randint(3,12)}/{random.randint(2020, 2026)}",
 }
 WS2 = {
-    "Path": r"school_app2026campusk\src\Worksheet_2.pdf",
+    "Path": r"src/Worksheet_2.pdf",
     "Subject": "Mixed subjects",
     "Date issued": f"{random.randint(1,30)}/{random.randint(3,12)}/{random.randint(2020, 2026)}",
 }
@@ -794,7 +794,7 @@ def att():
 
 def profile():
     st.subheader("Profile")
-    st.image(r"school_app2026campusk\src\pfp.png")
+    st.image(r"src/pfp.png")
     pfdict = {
         "Name": Data["Name"],
         "Class": Data["Class"],
@@ -811,7 +811,7 @@ def markss():
     utdf = pd.DataFrame(
         list(Data["Marks"]["UT1"].items()), columns=["Subjects", "Marks"]
     )
-    st.image(r"school_app2026campusk\src\pfp.png")
+    st.image(r"src/pfp.png")
     pfdict = {
         "Name": Data["Name"],
         "Class": Data["Class"],
