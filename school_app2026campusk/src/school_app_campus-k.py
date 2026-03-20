@@ -905,7 +905,7 @@ def MSG():
         msg = st.text_area(label="Enter your message.")
         submit = st.form_submit_button("Submit")
     if submit:
-        st.success("Message submitted!")
+        st.toast("Message submitted!")
         Msgs.append({"Message 1": msg})
         st.write(Msgs)
         s = st.selectbox("Want to write another message?", ["Paid", "Not paid"])
@@ -1152,10 +1152,10 @@ def pay():
         if st.button("Pay all 💵", key="2026"):
             for p in st.session_state.Payments["Payments_2026"]:
                 st.session_state.Payments["Payments_2026"][p] = "Paid"
-            st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
 
-            st.rerun()
+            
 
     with t2:
         st.subheader("Payments 2027")
@@ -1163,20 +1163,19 @@ def pay():
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
-            st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
 
-            st.rerun()
+            
     with t3:
         st.subheader("Payments 2028")
         st.dataframe(paydf2028)
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
-            st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-            st.rerun()
-
+            
 
 def hw():
     st.title("Homework--There are 2 worksheets to be downloaded.")
@@ -1218,9 +1217,9 @@ def hw():
 def notifications():
     st.title("Check notifications.")
     if st.button("Check notifications"):
-        st.error("🚨 Fee due tomorrow!")
-        st.warning("⚠️ Math test today!")
-        st.success(
+        st.toast("🚨 Fee due tomorrow!")
+        st.toast("⚠️ Math test today!")
+        st.toast(
             f"📋PTM scheduled on {random.randint(1,11)}/{random.randint(1,11)}/{random.randint(2020, 2026)} "
         )
 
