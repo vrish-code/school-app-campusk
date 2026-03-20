@@ -1153,18 +1153,18 @@ def pay():
     with t1:
         st.subheader("Payments 2026")
         st.dataframe(paydf2026)
-        s=st.button("Pay all 2026 💵", key="2026", onclick=mapa, args=("Payments_2026") )
+        s=st.button("Pay all 2026 💵", key="2026", on_click=mapa, args=("Payments_2026") )
         st.rerun()
     with t2:
         st.subheader("Payments 2027")
         st.dataframe(paydf2027)
-        s=st.button("Pay all 2027 💵", key="2027", onclick=mapa, args=("Payments_2027") )
+        s=st.button("Pay all 2027 💵", key="2027", on_click=mapa, args=("Payments_2027") )
         st.rerun()
             
     with t3:
         st.subheader("Payments 2028")
         st.dataframe(paydf2028)
-        s=st.button("Pay all 2028 💵", key="2028", onclick=mapa, args=("Payments_2028") )    
+        s=st.button("Pay all 2028 💵", key="2028", on_click=mapa, args=("Payments_2028") )    
         st.rerun()
           
 
