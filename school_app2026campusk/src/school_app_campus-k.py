@@ -916,10 +916,10 @@ def announcement():
     for a in range(len(Announcements)):
         with st.chat_message:
             st.write(
-            f"""⚠️ Announcement ⚠️\n
+                f"""⚠️ Announcement ⚠️\n
                     {Announcements[a]}\n
                     """
-        )
+            )
 
 
 def calendar2026():
@@ -948,7 +948,7 @@ def calendar2026():
         "Sundays",
     ]
     t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12 = st.tabs(mo)
-    s=""
+    s = ""
     with t1:
         c1, c2 = st.columns(2)
         with c1:
@@ -1160,7 +1160,7 @@ def pay():
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
-             st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.success(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
 
             st.rerun()
@@ -1170,7 +1170,7 @@ def pay():
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
-             st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.success(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
             st.rerun()
 
