@@ -914,8 +914,7 @@ def MSG():
 def announcement():
     st.title("Announcements 📢")
     for a in range(len(Announcements)):
-        with st.chat_message:
-            st.write(
+        st.write(
                 f"""⚠️ Announcement ⚠️\n
                     {Announcements[a]}\n
                     """
