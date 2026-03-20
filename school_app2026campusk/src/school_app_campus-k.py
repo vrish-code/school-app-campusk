@@ -1131,6 +1131,11 @@ def pay():
                 "Annual charges (15000)": "Not paid",
             },
         }
+    def mapa(yk):
+        st.toast(f"Paid all for {Data["Name"]}!")
+        st.balloons()
+        for p in st.session_state.Payments[yk]:
+            st.session_state.Payments[yk][p]="Paid"
     st.title("Payments 💵")
     paydf2026 = pd.DataFrame(
         list(st.session_state.Payments["Payments_2026"].items()),
@@ -1148,38 +1153,19 @@ def pay():
     with t1:
         st.subheader("Payments 2026")
         st.dataframe(paydf2026)
-        if st.button("Pay all 2026 💵", key="2026"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
-            for p in st.session_state.Payments["Payments_2026"]:
-                st.session_state.Payments["Payments_2026"][p]="Paid"
-            st.rerun()
-
-          
-
-            
-
+        s=st.button("Pay all 2026 💵", key="2026", onclick=mapa, args=("Payments_2026") )
+        st.rerun()
     with t2:
         st.subheader("Payments 2027")
         st.dataframe(paydf2027)
-        if st.button("Pay all 💵", key="2027"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
-            for p in st.session_state.Payments["Payments_2027"]:
-                st.session_state.Payments["Payments_2027"][p] = "Paid"
-            
-            st.rerun()
+        s=st.button("Pay all 2027 💵", key="2027", onclick=mapa, args=("Payments_2027") )
+        st.rerun()
             
     with t3:
         st.subheader("Payments 2028")
         st.dataframe(paydf2028)
-        if st.button("Pay all 💵", key="2028"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
-            for p in st.session_state.Payments["Payments_2028"]:
-                st.session_state.Payments["Payments_2028"][p] = "Paid"
-            
-            st.rerun()
+        s=st.button("Pay all 2028 💵", key="2028", onclick=mapa, args=("Payments_2028") )    
+        st.rerun()
           
 
 def hw():
