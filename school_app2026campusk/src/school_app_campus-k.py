@@ -1150,32 +1150,34 @@ def pay():
         st.subheader("Payments 2026")
         st.dataframe(paydf2026)
         if st.button("Pay all 2026 💵", key="2026"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
             for p in st.session_state.Payments["Payments_2026"]:
                 st.session_state.Payments["Payments_2026"][p]="Paid"
             st.rerun()
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
     with t2:
         st.subheader("Payments 2027")
         st.dataframe(paydf2027)
         if st.button("Pay all 💵", key="2027"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
+            
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
             
             st.rerun()
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
             
     with t3:
         st.subheader("Payments 2028")
         st.dataframe(paydf2028)
         if st.button("Pay all 💵", key="2028"):
-            st.toast(f"You paid all the fees for {Data["Name"]}!")
-            st.balloons()
+            
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
             
             st.rerun()
+            st.toast(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
           
 
 def hw():
