@@ -1152,8 +1152,14 @@ def pay():
         if st.button("Pay all 💵", key="2026"):
             for p in st.session_state.Payments["Payments_2026"]:
                 st.session_state.Payments["Payments_2026"][p] = "Paid"
+            paydf2026 = pd.DataFrame(
+        list(st.session_state.Payments["Payments_2026"].items()),
+        columns=["Payment", "Status"],
+    )
+            st.dataframe(paydf2026)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
+            st.rerun()
 
             
 
@@ -1163,9 +1169,14 @@ def pay():
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
+             paydf2027 = pd.DataFrame(
+        list(st.session_state.Payments["Payments_2027"].items()),
+        columns=["Payment", "Status"],
+    )
+            st.dataframe(paydf2027)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-
+            st.rerun()
             
     with t3:
         st.subheader("Payments 2028")
@@ -1173,9 +1184,14 @@ def pay():
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
+                paydf2028 = pd.DataFrame(
+        list(st.session_state.Payments["Payments_2028"].items()),
+        columns=["Payment", "Status"],
+    )  
+            st.dataframe(paydf2028)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-            
+            st.rerun()
 
 def hw():
     st.title("Homework--There are 2 worksheets to be downloaded.")
