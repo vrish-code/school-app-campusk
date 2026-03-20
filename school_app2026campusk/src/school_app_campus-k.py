@@ -1159,7 +1159,7 @@ def pay():
             st.dataframe(paydf2026)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-            st.rerun()
+          
 
             
 
@@ -1176,7 +1176,6 @@ def pay():
             st.dataframe(paydf2027)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-            st.rerun()
             
     with t3:
         st.subheader("Payments 2028")
@@ -1191,7 +1190,7 @@ def pay():
             st.dataframe(paydf2028)
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
-            st.rerun()
+          
 
 def hw():
     st.title("Homework--There are 2 worksheets to be downloaded.")
