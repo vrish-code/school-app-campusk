@@ -914,10 +914,11 @@ def MSG():
 def announcement():
     st.title("Announcements 📢")
     for a in range(len(Announcements)):
-        st.write(
-            f"""⚠️Announcement⚠️\n
+        with st.chat_message:
+            st.write(
+            f"""⚠️ Announcement ⚠️\n
                     {Announcements[a]}\n
-                    ___________________"""
+                    """
         )
 
 
@@ -947,6 +948,7 @@ def calendar2026():
         "Sundays",
     ]
     t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12 = st.tabs(mo)
+    s=""
     with t1:
         c1, c2 = st.columns(2)
         with c1:
@@ -1147,6 +1149,8 @@ def pay():
         if st.button("Pay all 💵", key="2026"):
             for p in st.session_state.Payments["Payments_2026"]:
                 st.session_state.Payments["Payments_2026"][p] = "Paid"
+            st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
 
             st.rerun()
 
@@ -1156,6 +1160,8 @@ def pay():
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
+             st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
 
             st.rerun()
     with t3:
@@ -1164,7 +1170,8 @@ def pay():
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
-
+             st.success(f"You paid all the fees for {Data["Name"]}!")
+            st.balloons()
             st.rerun()
 
 
