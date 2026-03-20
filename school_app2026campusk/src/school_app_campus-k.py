@@ -1169,7 +1169,7 @@ def pay():
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
-             paydf2027 = pd.DataFrame(
+            paydf2027 = pd.DataFrame(
         list(st.session_state.Payments["Payments_2027"].items()),
         columns=["Payment", "Status"],
     )
@@ -1184,7 +1184,7 @@ def pay():
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
-                paydf2028 = pd.DataFrame(
+            paydf2028 = pd.DataFrame(
         list(st.session_state.Payments["Payments_2028"].items()),
         columns=["Payment", "Status"],
     )  
