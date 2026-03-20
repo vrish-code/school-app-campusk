@@ -1109,7 +1109,6 @@ def calendar2026():
         with c2:
             st.image(fpd)
 
-
 def pay():
     if "Payments" not in st.session_state:
         st.session_state.Payments = {
@@ -1149,13 +1148,13 @@ def pay():
     with t1:
         st.subheader("Payments 2026")
         st.dataframe(paydf2026)
-        if st.button("Pay all 💵", key="2026"):
+        if st.button("Pay all 2026 💵", key="2026"):
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
             for p in st.session_state.Payments["Payments_2026"]:
-                st.session_state.Payments["Payments_2026"][p] = "Paid"
-           
+                st.session_state.Payments["Payments_2026"][p]="Paid"
             st.rerun()
+
           
 
             
