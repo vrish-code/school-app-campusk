@@ -1154,6 +1154,7 @@ def pay():
                 st.session_state.Payments["Payments_2026"][p] = "Paid"
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
+            st.rerun()
           
 
             
@@ -1166,6 +1167,7 @@ def pay():
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
+            st.rerun()
             
     with t3:
         st.subheader("Payments 2028")
@@ -1175,6 +1177,7 @@ def pay():
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
             st.toast(f"You paid all the fees for {Data["Name"]}!")
             st.balloons()
+            st.rerun()
           
 
 def hw():
