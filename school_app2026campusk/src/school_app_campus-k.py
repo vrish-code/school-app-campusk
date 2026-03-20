@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import random
 import os
-import string as s
+
 
 wsimgpath = r"school_app2026campusk/src/Ws.png"
 st.set_page_config(layout="wide")
@@ -920,7 +920,7 @@ def announcement():
     for a in range(len(Announcements)):
         st.write(
                 f"""⚠️ Announcement ⚠️\n
-                    {Announcements[a]}\n
+                {Announcements[a]}\n
                     """
             )
 
