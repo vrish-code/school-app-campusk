@@ -686,6 +686,7 @@ def init():
 
 def att():
     st.title("Attendance 📋")
+    st.divider()
     j = fe = m = a = ma = ju = jul = aug = sep = o = n = d = 0
     for f in Data["Attendance"]:
         j = sum(1 for x in Data["Attendance"]["January 2026"] if x == True)
@@ -724,11 +725,12 @@ def att():
         list(apd.items()), columns=["Month", "Attendance in percentage"]
     )
     st.subheader(f"Attendance of {Data["Name"]}")
+    st.divider()
     st.dataframe(apddf)
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3, c4 = st.columns(4, border=True)
     with c1:
         b, a = plt.subplots()
-        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         a.bar(
             [months[3], months[5], months[8], months[10]],
             [attendance[3], attendance[5], attendance[8], attendance[10]],
@@ -738,7 +740,7 @@ def att():
         a.set_xlabel("Months")
         a.set_ylabel("Attendance out of 30 days")
         a.set_ylim(0, 30)
-        
+
         st.pyplot(b)
         plt.close(b)
     with c2:
@@ -764,7 +766,7 @@ def att():
             ],
             color="skyblue",
         )
-        d.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        d.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         d.set_title(f"Attendance of {Data["Name"]}—months with 31 days")
         d.set_xlabel("Months")
         d.set_ylabel("Attendance out of 31 days")
@@ -773,7 +775,7 @@ def att():
         plt.close(c)
     with c3:
         e, f = plt.subplots()
-        f.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        f.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         f.bar([months[1]], [attendance[1]], color="skyblue")
         f.set_title(f"Attendance of {Data["Name"]}—month with 28 days (February)")
         f.set_xlabel("Month")
@@ -783,7 +785,7 @@ def att():
         plt.close(e)
     with c4:
         g, h = plt.subplots()
-        h.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        h.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         h.bar(["Total attendance"], [sum(attendance) / sum(dm) * 100], color="skyblue")
         h.set_title(f"Attendance of {Data["Name"]}—total")
         h.set_xlabel("Total attendance percentage")
@@ -796,6 +798,7 @@ def att():
 
 def profile():
     st.subheader("Profile")
+    st.divider()
     st.image(r"school_app2026campusk/src/pfp.png")
     pfdict = {
         "Name": Data["Name"],
@@ -814,6 +817,7 @@ def markss():
         list(Data["Marks"]["UT1"].items()), columns=["Subjects", "Marks"]
     )
     st.image(r"school_app2026campusk/src/pfp.png")
+    st.divider()
     pfdict = {
         "Name": Data["Name"],
         "Class": Data["Class"],
@@ -838,35 +842,40 @@ def markss():
     t1, t2, t3, t4 = st.tabs(["UT1", "UT2", "T1", "Total scores"])
     with t1:
         st.subheader("UT1 performance")
+        st.divider()
         st.dataframe(utdf)
+        st.divider()
         f, a = plt.subplots()
-        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         a.bar(subjects, mut, color="skyblue")
         a.set_title("UT1 performance")
         a.set_xlabel("Subjects")
         a.set_ylabel("Marks")
         a.set_ylim(0, 50)
-       
+
         st.pyplot(f)
         plt.close(f)
     with t2:
         st.subheader("UT2 performance")
+        st.divider()
         st.dataframe(ut2df)
+        st.divider()
         f, a = plt.subplots()
-        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         a.bar(subjects, mut, color="skyblue")
         a.set_title("UT2 performance")
         a.set_xlabel("Subjects")
         a.set_ylabel("Marks")
         a.set_ylim(0, 50)
-        
+
         st.pyplot(f)
         plt.close(f)
     with t3:
         st.subheader("T1 performance")
+        st.divider()
         st.dataframe(tdf)
         f, a = plt.subplots()
-        a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+        a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         a.bar(subjects, mt, color="skyblue")
         a.set_title("T1 performance")
         a.set_xlabel("Subjects")
@@ -876,11 +885,12 @@ def markss():
         plt.close(f)
     with t4:
         st.subheader("Total performance")
+        st.divider()
         st.dataframe(etcdf)
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             f, a = plt.subplots()
-            a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+            a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
             a.bar(["UT1", "UT2"], [283, 283], color="skyblue")
             a.set_title("Overall performance")
             a.set_xlabel("Exams")
@@ -890,7 +900,7 @@ def markss():
             plt.close(f)
         with c2:
             f, a = plt.subplots()
-            a.grid(True, which='major', axis='both', alpha=0.3, linestyle='--')
+            a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
             a.bar(["T1"], [580], color="skyblue")
             a.set_title("Overall performance")
             a.set_xlabel("Exam")
@@ -901,7 +911,8 @@ def markss():
 
 
 def MSG():
-    st.write("Write to School 📝")
+    st.title("Write to School 📝")
+    st.divider()
     with st.form(key="WTS"):
         msg = st.text_area(label="Enter your message.")
         submit = st.form_submit_button("Submit")
@@ -920,10 +931,10 @@ def announcement():
     st.title("Announcements 📢")
     for a in range(len(Announcements)):
         st.write(
-                f"""⚠️ Announcement ⚠️\n
+            f"""⚠️ Announcement ⚠️\n
                 {Announcements[a]}\n
                     """
-            )
+        )
 
 
 def calendar2026():
@@ -954,9 +965,10 @@ def calendar2026():
     t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12 = st.tabs(mo)
     s = ""
     with t1:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[0])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[0]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[0]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[0]][d[2]]}")
@@ -967,9 +979,10 @@ def calendar2026():
         with c2:
             st.image(fpj)
     with t2:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[1])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[1]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[1]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[1]][d[2]]}")
@@ -980,9 +993,10 @@ def calendar2026():
         with c2:
             st.image(fpf)
     with t3:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[2])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[2]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[2]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[2]][d[2]]}")
@@ -993,9 +1007,10 @@ def calendar2026():
         with c2:
             st.image(fpm)
     with t4:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[3])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[3]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[3]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[3]][d[2]]}")
@@ -1006,9 +1021,10 @@ def calendar2026():
         with c2:
             st.image(fpa)
     with t5:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[4])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[4]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[4]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[4]][d[2]]}")
@@ -1019,9 +1035,10 @@ def calendar2026():
         with c2:
             st.image(fpma)
     with t6:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[5])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[5]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[5]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[5]][d[2]]}")
@@ -1032,9 +1049,10 @@ def calendar2026():
         with c2:
             st.image(fpju)
     with t7:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[6])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[6]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[6]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[6]][d[2]]}")
@@ -1045,9 +1063,10 @@ def calendar2026():
         with c2:
             st.image(fpjul)
     with t8:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[7])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[7]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[7]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[7]][d[2]]}")
@@ -1058,9 +1077,10 @@ def calendar2026():
         with c2:
             st.image(fpau)
     with t9:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[8])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[8]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[8]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[8]][d[2]]}")
@@ -1071,9 +1091,10 @@ def calendar2026():
         with c2:
             st.image(fpsep)
     with t10:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[9])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[9]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[9]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[9]][d[2]]}")
@@ -1084,9 +1105,10 @@ def calendar2026():
         with c2:
             st.image(fpo)
     with t11:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[10])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[10]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[10]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[10]][d[2]]}")
@@ -1097,9 +1119,10 @@ def calendar2026():
         with c2:
             st.image(fpn)
     with t12:
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns(2, border=True)
         with c1:
             st.subheader(mo[11])
+            st.divider()
             st.write(f"{d[0]}:{calendar[mo[11]][d[0]]}")
             st.write(f"{d[1]}:{calendar[mo[11]][d[1]]}")
             st.write(f"{d[2]}:{calendar[mo[11]][d[2]]}")
@@ -1110,13 +1133,14 @@ def calendar2026():
         with c2:
             st.image(fpd)
 
+
 def pay():
     if "Flag" not in st.session_state:
-        st.session_state.Flag=False
+        st.session_state.Flag = False
     if st.session_state.Flag:
         st.toast(f"You paid all the fees for {Data["Name"]}!")
         st.balloons()
-        st.session_state.Flag=False
+        st.session_state.Flag = False
     if "Payments" not in st.session_state:
         st.session_state.Payments = {
             "Payments_2026": {
@@ -1139,6 +1163,7 @@ def pay():
             },
         }
     st.title("Payments 💵")
+    st.divider()
     paydf2026 = pd.DataFrame(
         list(st.session_state.Payments["Payments_2026"].items()),
         columns=["Payment", "Status"],
@@ -1157,29 +1182,28 @@ def pay():
         st.dataframe(paydf2026)
         if st.button("Pay all 2026 💵", key="2026"):
             for p in st.session_state.Payments["Payments_2026"]:
-                st.session_state.Payments["Payments_2026"][p]="Paid"
-            st.session_state.Flag=True
+                st.session_state.Payments["Payments_2026"][p] = "Paid"
+            st.session_state.Flag = True
             st.rerun()
-            
+
     with t2:
         st.subheader("Payments 2027")
         st.dataframe(paydf2027)
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
-            st.session_state.Flag=True
+            st.session_state.Flag = True
             st.rerun()
-          
+
     with t3:
         st.subheader("Payments 2028")
         st.dataframe(paydf2028)
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
-            st.session_state.Flag=True
+            st.session_state.Flag = True
             st.rerun()
-           
-          
+
 
 def hw():
     st.title("Homework--There are 2 worksheets to be downloaded.")
