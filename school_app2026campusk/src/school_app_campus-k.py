@@ -816,6 +816,8 @@ def markss():
     utdf = pd.DataFrame(
         list(Data["Marks"]["UT1"].items()), columns=["Subjects", "Marks"]
     )
+    st.title("Marks")
+    st.divider()
     st.image(r"school_app2026campusk/src/pfp.png")
     st.divider()
     pfdict = {
@@ -929,6 +931,7 @@ def MSG():
 
 def announcement():
     st.title("Announcements 📢")
+    st.divider()
     for a in range(len(Announcements)):
         st.write(
             f"""⚠️ Announcement ⚠️\n
