@@ -822,6 +822,7 @@ def markss():
     }
     dfpf = pd.DataFrame(list(pfdict.items()), columns=["Student Details", "Status"])
     st.dataframe(dfpf)
+    st.divider()
     ut2df = pd.DataFrame(
         list(Data["Marks"]["UT2"].items()), columns=["Subjects", "Marks"]
     )
