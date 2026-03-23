@@ -52,7 +52,7 @@ Announcements = [
 
 Data = {}
 if "Msgs" not in st.session_state:
-   Msgs = []
+   st.session_state.Msgs = []
 calendar = {
     "January": {
         "Mondays": [5, 12, 19, 26],
@@ -921,11 +921,6 @@ def MSG():
     if submit:
         st.toast("Message submitted!")
         st.session_state.Msgs.append({"Message 1": msg})
-        s = st.selectbox("Want to write another message?", ["Paid", "Not paid"])
-        if s == "Paid":
-            st.rerun()
-        elif s == "Not paid":
-            pass
 
 
 def announcement():
