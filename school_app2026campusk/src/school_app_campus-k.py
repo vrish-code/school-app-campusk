@@ -920,8 +920,7 @@ def MSG():
         submit = st.form_submit_button("Submit")
     if submit:
         st.toast("Message submitted!")
-        Msgs.append({"Message 1": msg})
-        st.write(Msgs)
+        st.session_state.Msgs.append({"Message 1": msg})
         s = st.selectbox("Want to write another message?", ["Paid", "Not paid"])
         if s == "Paid":
             st.rerun()
