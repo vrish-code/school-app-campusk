@@ -6,8 +6,7 @@ import os
 
 
 wsimgpath = r"school_app2026campusk/src/Ws.png"
-st.set_page_config(layout="wide")
-st.set_page_config(initial_sidebar_state="expanded")
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 fpj = r"school_app2026campusk/src/1.png"
 fpf = r"school_app2026campusk/src/2.png"
 fpm = r"school_app2026campusk/src/3.png"
@@ -52,7 +51,8 @@ Announcements = [
 
 
 Data = {}
-Msgs = []
+if "Msgs" not in st.session_state:
+   Msgs = []
 calendar = {
     "January": {
         "Mondays": [5, 12, 19, 26],
