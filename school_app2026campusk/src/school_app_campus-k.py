@@ -726,7 +726,7 @@ def att():
     )
     st.subheader(f"Attendance of {Data["Name"]}")
     st.divider()
-    st.dataframe(apddf)
+    st.dataframe(apddf, hide_index=True)
     c1, c2, c3, c4 = st.columns(4, border=True)
     with c1:
         b, a = plt.subplots()
@@ -807,7 +807,7 @@ def profile():
         "School": Data["School"],
     }
     dfpf = pd.DataFrame(list(pfdict.items()), columns=["Student Details", "Status"])
-    st.dataframe(dfpf)
+    st.dataframe(dfpf, hide_index=True)
 
 
 def markss():
@@ -825,7 +825,7 @@ def markss():
         "School": Data["School"],
     }
     dfpf = pd.DataFrame(list(pfdict.items()), columns=["Student Details", "Status"])
-    st.dataframe(dfpf)
+    st.dataframe(dfpf, hide_index=True)
     st.divider()
     ut2df = pd.DataFrame(
         list(Data["Marks"]["UT2"].items()), columns=["Subjects", "Marks"]
@@ -843,7 +843,7 @@ def markss():
     with t1:
         st.subheader("UT1 performance")
         st.divider()
-        st.dataframe(utdf)
+        st.dataframe(utdf, hide_index=True)
         st.divider()
         f, a = plt.subplots()
         a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
@@ -858,7 +858,7 @@ def markss():
     with t2:
         st.subheader("UT2 performance")
         st.divider()
-        st.dataframe(ut2df)
+        st.dataframe(ut2df, hide_index=True)
         st.divider()
         f, a = plt.subplots()
         a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
@@ -873,7 +873,7 @@ def markss():
     with t3:
         st.subheader("T1 performance")
         st.divider()
-        st.dataframe(tdf)
+        st.dataframe(tdf, hide_index=True)
         f, a = plt.subplots()
         a.grid(True, which="major", axis="both", alpha=0.3, linestyle="--")
         a.bar(subjects, mt, color="skyblue")
@@ -886,7 +886,7 @@ def markss():
     with t4:
         st.subheader("Total performance")
         st.divider()
-        st.dataframe(etcdf)
+        st.dataframe(etcdf, hide_index=True)
         c1, c2 = st.columns(2, border=True)
         with c1:
             f, a = plt.subplots()
@@ -1179,7 +1179,7 @@ def pay():
     t1, t2, t3 = st.tabs(["Payments-2026 💵", "Payments-2027 💵", "Payments-2028 💵"])
     with t1:
         st.subheader("Payments 2026")
-        st.dataframe(paydf2026)
+        st.dataframe(paydf2026, hide_index=True)
         if st.button("Pay all 2026 💵", key="2026"):
             for p in st.session_state.Payments["Payments_2026"]:
                 st.session_state.Payments["Payments_2026"][p] = "Paid"
@@ -1188,7 +1188,7 @@ def pay():
 
     with t2:
         st.subheader("Payments 2027")
-        st.dataframe(paydf2027)
+        st.dataframe(paydf2027, hide_index=True)
         if st.button("Pay all 💵", key="2027"):
             for p in st.session_state.Payments["Payments_2027"]:
                 st.session_state.Payments["Payments_2027"][p] = "Paid"
@@ -1197,7 +1197,7 @@ def pay():
 
     with t3:
         st.subheader("Payments 2028")
-        st.dataframe(paydf2028)
+        st.dataframe(paydf2028, hide_index=True)
         if st.button("Pay all 💵", key="2028"):
             for p in st.session_state.Payments["Payments_2028"]:
                 st.session_state.Payments["Payments_2028"][p] = "Paid"
