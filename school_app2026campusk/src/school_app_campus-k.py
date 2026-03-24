@@ -6,8 +6,7 @@ import os
 
 
 wsimgpath = r"school_app2026campusk/src/Ws.png"
-st.set_page_config(layout="wide")
-st.set_page_config(initial_sidebar_state="expanded")
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 fpj = r"school_app2026campusk/src/1.png"
 fpf = r"school_app2026campusk/src/2.png"
 fpm = r"school_app2026campusk/src/3.png"
@@ -52,7 +51,8 @@ Announcements = [
 
 
 Data = {}
-Msgs = []
+if "Msgs" not in st.session_state:
+   st.session_state.Msgs = []
 calendar = {
     "January": {
         "Mondays": [5, 12, 19, 26],
@@ -816,6 +816,8 @@ def markss():
     utdf = pd.DataFrame(
         list(Data["Marks"]["UT1"].items()), columns=["Subjects", "Marks"]
     )
+    st.title("Marks")
+    st.divider()
     st.image(r"school_app2026campusk/src/pfp.png")
     st.divider()
     pfdict = {
@@ -918,17 +920,12 @@ def MSG():
         submit = st.form_submit_button("Submit")
     if submit:
         st.toast("Message submitted!")
-        Msgs.append({"Message 1": msg})
-        st.write(Msgs)
-        s = st.selectbox("Want to write another message?", ["Paid", "Not paid"])
-        if s == "Paid":
-            st.rerun()
-        elif s == "Not paid":
-            pass
+        st.session_state.Msgs.append({"Message 1": msg})
 
 
 def announcement():
     st.title("Announcements 📢")
+    st.divider()
     for a in range(len(Announcements)):
         st.write(
             f"""⚠️ Announcement ⚠️\n
