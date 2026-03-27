@@ -835,9 +835,9 @@ def markss():
     tdf = pd.DataFrame(list(Data["Marks"]["T1"].items()), columns=["Subjects", "Marks"])
     subjects = list(Data["Marks"]["UT1"].keys())[:-4]
     etc = [
-        "UT1": {"Taken score": 283, "Out of": 300},
-        "UT2": {"Taken score": 283, "Out of": 300},
-        "T1": {"Taken score": 580, "Out of": 600},
+        {"UT1": {"Taken score": 283, "Out of": 300}},
+        {"UT2": {"Taken score": 283, "Out of": 300}},
+        {"T1": {"Taken score": 580, "Out of": 600}}
     ]
 
     etcdf = pd.DataFrame(etc)
